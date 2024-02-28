@@ -59,7 +59,7 @@ Several prerequisites are required:
 - Knowledge about Windows Server Operating Systems (2019 and higher) & Hyper-V is strongly recommended.
 
 ## The Nested Hyper-V Architecture
-![The Nested Hyper-V Architecture](\images\NestedHyperVArch.png)
+![The Nested Hyper-V Architecture](./images/NestedHyperVArch.png)
 
 In this Architecture we deploy an Azure VM in an Azure VNet with a public IP nr. Through a custom RDP port and a rule in the NSG, we can access the Hyper-V VM. In the Hyper-V VM we deploy a NAT network for the Nested VM's so they can access internet but will not be accessible from Internet.
 Because we 'concentrate' the Nested VM images on a disk we need the fastest IOPS and Throughput we can get.
