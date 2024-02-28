@@ -106,7 +106,7 @@ Remember to switch you VM *off* when not in use, and make sure that it is *Stopp
 - Set *Public inbound ports* to *None*.
 It should look like this:
 
-![VM-Basics](.\images\VM-basics.png)
+![VM-Basics](./images/VM-basics.png)
 
 ### Disks Section
 - Leave the OS disk to standard.
@@ -122,13 +122,13 @@ It should look like this:
 - same for *Disk Throughput*.
 Should look like this:
 
-![VM-Disks-DiskSize](.\images\VM-Disks-DiskSize.png)
+![VM-Disks-DiskSize](./images/VM-Disks-DiskSize.png)
 - Select *OK*.
 - Mark the checkbox *Delete disk with VM*.
 
 The Disks Section should look like this:
 
-![VM-Disks](.\images\VM-Disks.png)
+![VM-Disks](./images/VM-Disks.png)
 
 ### Networking section
 - Select the VNet you created
@@ -142,7 +142,7 @@ The Disks Section should look like this:
 
 Should look like this:
 
-![VM-Networking](.\images\VM-Networking.png)
+![VM-Networking](./images/VM-Networking.png)
 
 ### Management section
 - You can skip this section.
@@ -169,7 +169,7 @@ The best practice to access the Hyper-V Server is  using the native RDP protocol
 - Output should state *ok*.
 Should look like this:
 
-![SetcustomRDPport](.\images\SetcustomRDPport.png)
+![SetcustomRDPport](./images/SetcustomRDPport.png)
 
 ### Add inbound port rule
 - In the Azure Portal on the VM Blade, go to *Network Settings*.
@@ -189,7 +189,7 @@ Should look like this:
 
 Should look like this:
 
-![nsgrule](.\images\nsgrule.png)
+![nsgrule](./images/nsgrule.png)
 
 ## Configure the Hyper-V Host
 - Connect with RDP to the Hyper-V host using the public IP and port.
@@ -233,7 +233,7 @@ This PS creates a new Hyper-V Internal network switch, attached to a virtual Net
 
 Result should look like this:
 
-![NATPSRule.png](.\images\NATPSRule.png)
+![NATPSRule.png](./images/NATPSRule.png)
 
 ### Configure DHCP for Hyper-V Nested VM's
 
@@ -259,7 +259,7 @@ Set-DhcpServerv4OptionValue -ScopeId 192.168.100.0 -DnsServer 168.63.129.16
 
 Result should look like this:
 
-![dhcpresult](.\images\dhcpresult.png)
+![dhcpresult](./images/dhcpresult.png)
 
 - You can check the DHCP afterwards by opening the DHCP management tool and check scope and scope options.
 
