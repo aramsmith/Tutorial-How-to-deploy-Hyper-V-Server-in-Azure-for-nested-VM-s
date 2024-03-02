@@ -21,22 +21,17 @@
 [Final Word](#final-word)
 
 ## Introduction
-To migrate your servers to Azure, the best recommendation is to use the [**Azure Migrate**](https://learn.microsoft.com/en-us/azure/migrate/) solution. Azure migrate offers:
+If you are learning Azure, there are several solutions and use cases where you might need an ‘On-premises’ simulation. A solution simulating a Datacenter or Virtual Server environment might help you learn, experience and tinker with solutions and use cases like:
 
-- Unified migration platform: A single portal to start, run, and track your migration to Azure.
-- Range of tools: A range of tools for assessment and migration. Azure Migrate tools include Azure Migrate: Discovery and assessment and Migration and modernization. Azure Migrate also integrates with other Azure services and tools, and with independent software vendor (ISV) offerings.
-- Assessment, migration, and modernization: In the Azure Migrate hub, you can assess, migrate, and modernize:
-  - Servers, databases and web apps: Assess on-premises servers including web apps and SQL Server instances and migrate them to Azure.
-  - Databases: Assess on-premises SQL Server instances and databases to migrate them to an SQL Server on an Azure VM or an Azure SQL Managed Instance or to an Azure SQL Database.
-  - Web applications: Assess on-premises web applications and migrate them to Azure App Service and Azure Kubernetes Service.
-  - Virtual desktops: Assess your on-premises virtual desktop infrastructure (VDI) and migrate it to Azure Virtual Desktop.
-  - Data: Migrate large amounts of data to Azure quickly and cost-effectively using Azure Data Box products.
+- **Azure Migrate** - Migrating Servers, Applications and databases from an On-Premise Server environment to Azure. See: [About Azure Migrate](https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview).
+-	**Azure Storage Mover** – Migrating Data from On-Prem File servers to Azure Storage while minimizing downtime, in a project-controlled way and without installing agents on every server. See: [Azure Storage Mover Documentation](https://learn.microsoft.com/en-us/azure/storage-mover/).
+-	**Azure File Sync** – Enables centralization of organization's file shares in Azure Files, while keeping the flexibility, performance, and compatibility of a Windows file server with caching. It can also support in migrating file share data. See: [Azure File Sync Documentation](https://learn.microsoft.com/en-us/azure/storage/file-sync/).
+-	**Azure Arc** - Manage your entire environment by projecting your existing non-Azure and/or on-premises resources into Azure Resource Manager. Manage and control your On-Premise estate with Arc, deploy extensions, defender and monitoring to these On-Prem VM’s See: [Azure Arc Documentation](https://learn.microsoft.com/en-us/azure/azure-arc/).
+-	**Azure Database and Azure App Service migrations** - A set of tools and solution helping you migrating On-Prem Databases and Web Applications to Azure.
 
-This repository is *NOT* intended to teach you Azure Migrate. If you want to learn more see the Azure Migrate [How To](https://learn.microsoft.com/en-us/azure/migrate/create-manage-projects) guides.
+What if you don’t have an On-premise environment to learn, experience and tinker with these solutions?
 
->*But what if you want to learn Azure migrate but you don't have a physical VMware or Hyper-V environment to do test, learn or play-around with Azure Migrate?*
-
->**Then this tutorial is just for you!** It will explain how to deploy a nested Hyper-V Server *in Azure* where you can deploy and run VM's and simulate an actual Azure Migrate VM migration or application modernization.
+**Then this tutorial is just for you! It will explain how to deploy a nested Hyper-V Server *in Azure* where you can deploy and run VM's and simulate an On-Prem Datacenter to learn, experience and tinker with the above mentioned solutions and use cases**.
 
 ### Nested Virtualization?
 Yes, you heard it right, modern processors include hardware features that make virtualization faster and more secure. Many hypervisors rely on these processor extensions to run virtual machines, for example, Intel VT-x and AMD-V. 
