@@ -38,10 +38,9 @@ Yes, you heard it right, modern processors include hardware features that make v
 The Azure Hypervisor is based on Windows Hyper-V see more [here](https://learn.microsoft.com/en-us/azure/security/fundamentals/hypervisor).
 New technologies enable Nested virtualization which makes this hardware support available to guest virtual machines. Therefore, is possible to run a Hypervisor *on* an other Hypervisor such as the Azure Hypervisor.
 
-In short, you can run a Windows Server OS on an Azure VM, deploy Hyper-V and run your own VM's in that Hyper-V. This is useful for different scenarios such as learning and testing Azure Migrate where you migrate VM's and applications from Hyper-V to Azure for more info see [Migrate Hyper-V VMs to Azure](https://learn.microsoft.com/en-us/azure/migrate/tutorial-migrate-hyper-v?tabs=UI).
+In short, you can run a Windows Server OS on an Azure VM, deploy Hyper-V and run your own VM's in that Hyper-V.
 
-However, this sounds easier that it actually is and comes with some limitations.
-This repository will explain you how to cost effective deploy a Hyper-V VM and some VVM's.
+However, this sounds easier that it actually is and comes with some limitations. This lab will explain you how to cost effective deploy a Hyper-V VM and some VVM's.
 
 *Never perform these labs in your production environment!*
 
