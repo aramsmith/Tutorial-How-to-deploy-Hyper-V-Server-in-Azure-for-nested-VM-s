@@ -285,8 +285,7 @@ To be able to deploy a Nested VM, you first need Server ISO files. Fortunately M
 - Start the nested VM, connect to it and press space bar to start the installation.
 - After the installation you will have your first nested VM running in Hyper-V, well done!!.
 
-
-As stated in the beginning, this lab won't explain how to migrate VM's to Azure with Azure Migrate, but this provides a start to learn, experience and tinker migrating VM's to Azure.
+Please hack on with the solutions you like to learn!
 
 ## Cleanup of resources
 To clean op the resources, just delete the Resource group, this will also delete all resources you deployed.
