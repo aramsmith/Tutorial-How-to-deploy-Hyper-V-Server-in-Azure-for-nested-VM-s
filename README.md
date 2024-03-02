@@ -60,13 +60,13 @@ Because we 'concentrate' the Nested VM images on a disk we need the fastest IOPS
 
 ### Tasks to perform
 - Create a resource group.
-- Create a VNet to acomodate your Hyper-V VM's.
+- Create a VNet to acomodate your Hyper-V VM.
 - Deploy an Azure VM that is capable to run nested Hyper-V.
 - Configure custom RDP Port.
 - Configure Secure Access via RDP.
 - Configure Hyper-V and NAT Networking.
-- Configure DHCP server for the Hyper-V VM's.
-- Deploy your first VM's in Hyper-V.
+- Configure DHCP server for the nested VM's.
+- Deploy your first VM's in nested Virtual Machine.
 
 Ready? Set & Go!
 
