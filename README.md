@@ -66,7 +66,7 @@ Because we 'concentrate' the Nested VM images on a disk we need the fastest IOPS
 - Configure Secure Access via RDP.
 - Configure Hyper-V and NAT Networking.
 - Configure DHCP server for the nested VM's.
-- Deploy your first VM's in nested Virtual Machine.
+- Deploy your first VM's as nested Virtual Machine.
 
 Ready? Set & Go!
 
