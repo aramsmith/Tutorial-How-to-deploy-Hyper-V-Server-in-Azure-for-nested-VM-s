@@ -60,19 +60,21 @@ Because we 'concentrate' the Nested VM images on a disk we need the fastest IOPS
 
 ### Tasks to perform
 - Create a resource group.
-- Create a VNet to acomodate your Hyper-V VM.
+- Create a VNet to acomodate your Hyper-V VM's.
 - Deploy an Azure VM that is capable to run nested Hyper-V.
 - Configure custom RDP Port.
 - Configure Secure Access via RDP.
 - Configure Hyper-V and NAT Networking.
 - Configure DHCP server for the nested VM's.
-- Deploy your first VM's as nested Virtual Machine.
+- Deploy your first nested Virtual Machine.
 
 Ready? Set & Go!
 
 ## Deploy Hyper-V VM.
 - Create a new Resource Group. You can choose any name.
-- In the resource group deploy a VNet with a range in the 10.x.x.x/24 range (do not use the 192.168.x.x range).
+- In the resource group deploy a VNet with a range in the 10.x.x.x/16 range (do not use the 192.168.x.x range).
+- Deploy a subnet with a 10.x.x.x/24 range (you can alsways add subnets later f.i. to learn site-to-site connectivity etc).
+> Because Microsoft will [retire the default outbound for VM's in a VNet to Internet](https://azure.microsoft.com/en-us/updates/default-outbound-access-for-vms-in-azure-will-be-retired-transition-to-a-new-method-of-internet-access/), I recommend to also deploy a Azure NAT gateway attached to your subnet to have internet access.
 - Create a subnet with the same 10 range.
 - There is no need for an Azure Bastion or Azure Firewall.
 
@@ -156,12 +158,15 @@ The best practice to access the Hyper-V Server is  using the native RDP protocol
 2. Add a rule in Network Access (NSG) that only your client IP can access the custom RDP port.
 
 ### Configure Custom RDP Port
-- Please determine a custom port such as 52525 or anything else then the know ports (like 3389).
+- Please determine a custom port such as 52525 or anything else then the known port (like 3389).
 - In the Azure Portal on the VM Blade, go to *Run Command*.
 - Select the *SetRDPPort* to Set Remote Desktop port.
 - Provide the custom port and hit *Run*.
 - Output should state *ok*.
-Should look like this:
+
+Patience my young padawan, this may take some minutes.
+
+Result should look like this:
 
 ![SetcustomRDPport](./images/SetcustomRDPport.png)
 
