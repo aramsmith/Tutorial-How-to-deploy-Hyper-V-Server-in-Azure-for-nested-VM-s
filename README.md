@@ -93,6 +93,7 @@ Remember to switch you VM *off* when not in use, and make sure that it is *Stopp
 - Select an availability zone.
 - Select at *Security Type* for *Standard* (NVMe is not supported on Trusted Launch)
 - Select at *Image* the *Windows Server 2022 Datacenter Azure Edition - X64 Gen2* image
+- ⚠️ do *NOT* select the *Windows Server 2022 Datacenter **Azure Edition Hotpatch - X64 Gen2** image*, because this won't have virtualization enabled in the BIOS.
 - Select at *Size* a VM SKU, Dv4 or Ev5 will do, depending on your test case you can select a type with the right amount of CPU's and Memory. Bear in mind that Hyper-V cannot overcommit resources such as CPU and Memory. Therefore, calculate what you need based on the amount of Nested Hyper-V VM's.
 - Recommended Choices:
    - For lager Labs, the *Standard_E16bs_V5* (16 vCPU's and 128GB memory,44000 IOPS).
@@ -152,6 +153,10 @@ Should look like this:
 - After the check and Validation is passed hit the *Create* button.
 
 ## Configure Custom RDP Port and Access
+There are two possibilities to provide an RDP connection to the Hyper-V Server:
+1. Change the RDP default port and use a custom port with NSG to provice a protected access.
+2. Use Azure Bastion, Now Bastion comes with a costs but there is now also a free option: Bastion Developer SKU, this one is free but comes with limitations such region availability and number of VM's to be able to connect to. See [Quickstart: Deploy Azure Bastion - Developer SKU](https://learn.microsoft.com/en-us/azure/bastion/quickstart-developer-sku) for more info.
+   
 The best practice to access the Hyper-V Server is  using the native RDP protocol. But to strengthen the security we need to do two actions:
 
 1. Change the Default RDP port to a custom port.
@@ -193,7 +198,13 @@ Should look like this:
 ## Configure the Hyper-V Host
 - Connect with RDP to the Hyper-V host using the public IP and port.
 - Make sure you run Windows update to get the latest updates.
-- Start *Disk Management* and initialise and format the Data disk.
+- Start *Disk Management* and initialise and format the Data disk. (you can run `diskmgmt.msc` from the Command Prompt)
+- Initialise and format the Data disk:
+- Leave the check for `GPT (GUID Partition Table)` and select OK
+- Right-click on the empty space in your data disk and select `New simple volume...`
+- Select *Next*, then leave the simple volume size the same as the _Maximum disk space in MB_ and click *Next*
+- Assign a drive letter (for example V for Volume 🙂) and click *Next*
+- Feel free to give the _Volume label_ a new name (i.e. *Hyper-V*), click *Next* and *Finish*
 - Open PowerShell and provide the command:
 
 `Install-WindowsFeature -Name Hyper-V -IncludeManagementTools -Restart`
